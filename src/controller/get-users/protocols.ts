@@ -1,0 +1,3 @@
+interface IGetUsersController {
+  handle(): any;
+}
