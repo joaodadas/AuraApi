@@ -2,9 +2,8 @@ import {
   IUpdateUserRepository,
   UpdateUserParams,
 } from "@/controller/update-user/protocols";
-import { MongoClient } from "@/db/mongo";
+import { MongoClient } from "../../db/mongo";
 import { User } from "@/models/user";
-import { error } from "console";
 import { ObjectId } from "mongodb";
 
 export class MongoUpdateUserRepository implements IUpdateUserRepository {
@@ -19,7 +18,7 @@ export class MongoUpdateUserRepository implements IUpdateUserRepository {
     );
 
     const user = await MongoClient.db
-      .collection<Omit<User, "id">>("user")
+      .collection<Omit<User, "id">>("users")
       .findOne({ _id: new ObjectId(id) });
 
     if (!user) {
