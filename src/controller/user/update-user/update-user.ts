@@ -1,7 +1,7 @@
 import { User } from "@/models/user";
-import { HttpRequest, HttpResponse, IController } from "../protocols";
+import { HttpRequest, HttpResponse, IController } from "../../protocols";
 import { IUpdateUserRepository, UpdateUserParams } from "./protocols";
-import { badRequest, ok, serverError } from "../helpers";
+import { badRequest, ok, serverError } from "../../helpers";
 
 export class UpdateUserController implements IController {
   constructor(private readonly updateUserRepository: IUpdateUserRepository) {}

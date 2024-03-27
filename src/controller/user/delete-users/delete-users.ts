@@ -1,7 +1,7 @@
 import { User } from "@/models/user";
-import { HttpRequest, HttpResponse, IController } from "../protocols";
+import { HttpRequest, HttpResponse, IController } from "../../protocols";
 import { IDeleteUserRepository } from "./protocols";
-import { badRequest, ok, serverError } from "../helpers";
+import { badRequest, ok, serverError } from "../../helpers";
 
 export class DeleteUserController implements IController {
   constructor(private readonly deleteUserRepository: IDeleteUserRepository) {}
